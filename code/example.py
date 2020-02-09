@@ -1,19 +1,22 @@
+#!/usr/bin/env python
+# -*- encoding: utf-8 -*-
 """
-@Author : Wilson79
-@Date   : 2020年2月9日 星期日 13:55:19
+@Author    :   Wilson79
+@Filename  :   example.py  
+@Date      :   2020/2/9 下午04:01 
 """
 
 # 导入绘图库matplotlib和词云制作库wordcloud
 # 按模版填色适用于英文txt文本
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud, ImageColorGenerator
-import jieba
 
 # 读入文本
 filename = 'doinb2.txt'
 with open(filename) as f:
     text = f.read()
 
+text.
 # 导入imageio库中的imread函数，用这个函数读取本地图片，作为词云形状图片
 import imageio
 
@@ -22,6 +25,7 @@ mk = imageio.imread("doinb.png")
 # 创建词云对象w
 wc = WordCloud(background_color="white",
                mask=mk, )
+
 wc.generate(text)
 
 ########
@@ -47,3 +51,4 @@ wc = wc.recolor(color_func=image_colors)
 
 # 将词云图片导出到当前文件夹
 wc.to_file('picture5_doinb.png')
+
